@@ -30,7 +30,7 @@
                 <td>1</td>
                 <td>1</td>
                 <td>1</td>
-                <td>1</td>        
+                <td>1</td>
             <tr>
                 <td>1</td>
                 <td>1</td>
@@ -47,20 +47,41 @@
         </table>
         <p id = "for_loop"></p>
         <p id = "for_loop2"></p>
+        <p id = "chessPiece">hello</p>
         <script>
             var text = "";
             var i;
-            for (i=1; i<11; i++){
-                text = text + i;  
+            for (i=5; i<31; i++){
+                if(i % 2 == 1){
+                    text = text + i;
+                }
             }
             document.getElementById("for_loop").innerHTML = text;
             text = "";
-            i=1; 
-            while(i<11){
-                text = text + i; 
+            i=5; 
+            while(i<31){
+                if(i % 5 == 0){
+                    if(i % 3 == 0){
+                        text = text + i;
+                    }
+                    else{
+                        text += "A ";
+                    }
+                }
+                else{
+                    text += "N/A ";
+                }
+                text += "<br>";
                 i++
             }
             document.getElementById("for_loop2").innerHTML = text;
+            tableChange();
+            var sample = {
+                piece: "Bishop",
+                color: "black",
+                material: "wood"
+            };
+            document.getElementById("chessPiece").innerHTML = sample["material"];
         </script>
 	</body>
 </html>
